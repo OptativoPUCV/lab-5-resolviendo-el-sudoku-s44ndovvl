@@ -61,8 +61,8 @@ int is_valid(Node* n){
                         if (n->sudo[a][b] == n->sudo[i][j]) return 0;
                     }
                   }*/
-
-                /*int k= 3 * (i/3) + (j/3);
+                
+                int k= 3 * (i/3) + (j/3);
                 for(p=0;p<9;p++){
                     int a=3*(k/3) + (p/3) ;
                     int b=3*(k%3) + (p%3) ;
@@ -71,7 +71,7 @@ int is_valid(Node* n){
                     }
                 }
 
-                int startRow = 3 * (i / 3);
+                /*int startRow = 3 * (i / 3);
                 int startCol = 3 * (j / 3);
                 for (int row = 0; row < 3; row++) {
                     for (int col = 0; col < 3; col++) {
@@ -102,7 +102,6 @@ List* get_adj_nodes(Node* n){
                   new->sudo[i][j] = k;
                   if(is_valid(new)) pushBack(list, new);
 
-                  free(new); // liberar la memoria del nodo copiado
               }
             }
         }
