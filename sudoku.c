@@ -48,39 +48,29 @@ int is_valid(Node* n){
 
     for(i=0;i<9;i++){
         for(j=0;j<9;j++){
-          for(k=0;k<9;k++){
-            if(k != j && n->sudo[i][k] == n->sudo[i][j]) return 0;
-            if(k != i && n->sudo[k][j] == n->sudo[i][j]) return 0;
-            }
-                
-            /*k = (i/3)+1 + 3*(j/3);
-
-            for(p=0;p<9;p++){
-              int a=3*(k/3) + (p/3) ;
-              int b=3*(k%3) + (p%3) ;
-              if(a != i && b != j && n->sudo[a][b] == n->sudo[i][j]) return 0;
-            }
-
-
             if(n->sudo[i][j] != 0){
                 for(k=0;k<9;k++){
-                    if(k != j && n->sudo[i][k] == n->sudo[i][j])
-                        return 0;
-                    if(k != i && n->sudo[k][j] == n->sudo[i][j])
-                        return 0;
+                    if(k != j && n->sudo[i][k] == n->sudo[i][j]) return 0;
+                    if(k != i && n->sudo[k][j] == n->sudo[i][j]) return 0;
                 }
                 
                 k = (i/3)+1 + 3*(j/3);
 
-                for(p=0;p<9;p++){
+                /*for(p=0;p<9;p++){
                   int a=3*(k/3) + (p/3) ;
                   int b=3*(k%3) + (p%3) ;
-                  if(a != i && b != j && n->sudo[a][b] == n->sudo[i][j]) {
-                    printf("pasa");
-                    return 0;
-                  }
+                  if(a != i && b != j && n->sudo[a][b] == n->sudo[i][j]) return 0;
+                }*/
+
+                int startRow = (i / 3) * 3;
+                int startCol = (j / 3) * 3;
+
+                for (p = 0; p < 9; p++) {
+                    int a = startRow + (p / 3);
+                    int b = startCol + (p % 3);
+                    if (a != i && b != j && n->sudo[a][b] == n->sudo[i][j]) return 0;
                 }
-            }*/
+            }
         }
     }
 

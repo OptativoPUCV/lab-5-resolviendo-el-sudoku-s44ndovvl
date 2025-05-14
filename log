@@ -59,3 +59,9 @@ ma., 13 de may. de 2025 23:26:37:
  tests:  2|4
 total_score: 15/70
 c5d4999
+ma., 13 de may. de 2025 23:37:45: 
+ sudoku.c | 28 +++++++++-------------------
+ 1 file changed, 9 insertions(+), 19 deletions(-)
+ tests:  5|3
+total_score: 35/70
+4e9dd85
