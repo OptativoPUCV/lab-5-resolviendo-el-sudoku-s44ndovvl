@@ -44,48 +44,49 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-    int i, j, k, p;
-    int seen[10]; // Arreglo para marcar números vistos (índices 1-9)
+    int i,j,k,p;
 
-    // Validar filas
-    for (i = 0; i < 9; i++) {
-        for (k = 0; k < 10; k++) seen[k] = 0; // Reiniciar el arreglo de marcadores para cada fila
-        for (j = 0; j < 9; j++) {
-            int num = n->sudo[i][j];
-            if (num != 0) {
-                if (seen[num] == 1) return 0; // Número repetido en la fila
-                seen[num] = 1;
+    for(i=0;i<9;i++){
+        for(j=0;j<9;j++){
+            if(n->sudo[i][j] != 0){
+                for(k=0;k<9;k++){
+                    if(k != j && n->sudo[i][k] == n->sudo[i][j]) return 0;
+                    if(k != i && n->sudo[k][j] == n->sudo[i][j]) return 0;
+                }
+                
+                /*for (p = 0; p < 9; p++) {
+                    int a = ((i / 3) * 3) + (p / 3);
+                    int b = ((j / 3) * 3) + (p % 3);
+                    if (a != i || b != j) { 
+                        if (n->sudo[a][b] == n->sudo[i][j]) return 0;
+                    }
+                  }*/
+
+                /*int k= 3 * (i/3) + (j/3);
+                for(p=0;p<9;p++){
+                    int a=3*(k/3) + (p/3) ;
+                    int b=3*(k%3) + (p%3) ;
+                    if (a != i || b != j) { 
+                          if (n->sudo[a][b] == n->sudo[i][j]) return 0;
+                    }
+                }
+
+                int startRow = 3 * (i / 3);
+                int startCol = 3 * (j / 3);
+                for (int row = 0; row < 3; row++) {
+                    for (int col = 0; col < 3; col++) {
+                        int a = startRow + row;
+                        int b = startCol + col;
+                        if (a != i || b != j) {
+                            if (n->sudo[a][b] == n->sudo[i][j]) return 0;
+                        }
+                    }
+                }*/
             }
         }
     }
 
-    // Validar columnas
-    for (j = 0; j < 9; j++) {
-        for (k = 0; k < 10; k++) seen[k] = 0; // Reiniciar el arreglo de marcadores para cada columna
-        for (i = 0; i < 9; i++) {
-            int num = n->sudo[i][j];
-            if (num != 0) {
-                if (seen[num] == 1) return 0; // Número repetido en la columna
-                seen[num] = 1;
-            }
-        }
-    }
-
-    // Validar submatrices de 3x3
-    for (k = 0; k < 9; k++) {
-        for (p = 0; p < 10; p++) seen[p] = 0; // Reiniciar el arreglo de marcadores para cada submatriz
-        for (p = 0; p < 9; p++) {
-            int row = 3 * (k / 3) + (p / 3);
-            int col = 3 * (k % 3) + (p % 3);
-            int num = n->sudo[row][col];
-            if (num != 0) {
-                if (seen[num] == 1) return 0; // Número repetido en la submatriz
-                seen[num] = 1;
-            }
-        }
-    }
-
-    return 1; // El estado es válido
+    return 1;
 }
 
 
@@ -100,6 +101,8 @@ List* get_adj_nodes(Node* n){
                   Node* new=copy(n);
                   new->sudo[i][j] = k;
                   if(is_valid(new)) pushBack(list, new);
+
+                  free(new); // liberar la memoria del nodo copiado
               }
             }
         }
