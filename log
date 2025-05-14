@@ -143,3 +143,9 @@ test.c:7:8: warning: '_strdup' defined but not used [-Wunused-function]
     7 | char * _strdup(const char * str) {
       |        ^~~~~~~
 465cdce
+mi., 14 de may. de 2025  0:06:36: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  5|3
+total_score: 35/70
+699040c

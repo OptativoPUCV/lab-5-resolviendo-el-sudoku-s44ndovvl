@@ -81,8 +81,8 @@ int is_valid(Node* n){
                             if (n->sudo[a][b] == n->sudo[i][j]) return 0;
                         }
                     }
-                }
-            }*/
+                }*/
+            }
         }
     }
 
