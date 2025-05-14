@@ -53,7 +53,7 @@ int is_valid(Node* n){
             if(k != i && n->sudo[k][j] == n->sudo[i][j]) return 0;
             }
                 
-            k = (i/3)+1 + 3*(j/3);
+            /*k = (i/3)+1 + 3*(j/3);
 
             for(p=0;p<9;p++){
               int a=3*(k/3) + (p/3) ;
@@ -62,7 +62,7 @@ int is_valid(Node* n){
             }
 
 
-            /*if(n->sudo[i][j] != 0){
+            if(n->sudo[i][j] != 0){
                 for(k=0;k<9;k++){
                     if(k != j && n->sudo[i][k] == n->sudo[i][j])
                         return 0;
@@ -94,7 +94,7 @@ List* get_adj_nodes(Node* n){
     int i,j,k; 
     for(i=0;i<9;i++){
         for(j=0;j<9;j++){
-            if(n->sudo[i][j] == 0){
+            if(n->sudo[i][j] == 0){ // se encuentra una casilla vacia
                 for(k = 1; k<=9; k++){ //revisa los 9 posibles numeros que se pueden poner en casilla vacia
                   Node* new=copy(n);
                   new->sudo[i][j] = k;
