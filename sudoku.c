@@ -69,7 +69,7 @@ int is_valid(Node* n){
                     if (a != i || b != j) { 
                           if (n->sudo[a][b] == n->sudo[i][j]) return 0;
                     }
-                }*/
+                }
 
                 int startRow = 3 * (i / 3);
                 int startCol = 3 * (j / 3);
@@ -82,7 +82,7 @@ int is_valid(Node* n){
                         }
                     }
                 }
-            }
+            }*/
         }
     }
 
