@@ -308,3 +308,18 @@ test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous 
     7 | char * _strdup(const char * str) {
       |        ^~~~~~~
 f27dbce
+ju., 15 de may. de 2025 10:45:33: 
+ sudoku.c | 1 -
+ 1 file changed, 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:149:12: error: implicit declaration of function 'size'; did you mean '_msize'? [-Wimplicit-function-declaration]
+  149 |     while (size(S) != 0) {
+      |            ^~~~
+      |            _msize
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+27043da
