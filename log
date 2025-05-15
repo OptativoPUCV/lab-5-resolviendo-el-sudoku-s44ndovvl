@@ -289,3 +289,22 @@ sudoku.c:171:1: warning: control reaches end of non-void function [-Wreturn-type
   171 | }
       | ^
 e332064
+ju., 15 de may. de 2025 10:45:15: 
+ sudoku.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:149:12: error: implicit declaration of function 'size'; did you mean '_msize'? [-Wimplicit-function-declaration]
+  149 |     while (size(S) != 0) {
+      |            ^~~~
+      |            _msize
+sudoku.c:152:13: error: implicit declaration of function 'is_visited'; did you mean 'is_valid'? [-Wimplicit-function-declaration]
+  152 |         if (is_visited(n)) continue;
+      |             ^~~~~~~~~~
+      |             is_valid
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+f27dbce
