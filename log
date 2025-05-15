@@ -221,3 +221,29 @@ ju., 15 de may. de 2025 10:26:08:
  tests:  7|1
 total_score: 55/70
 667f3d8
+ju., 15 de may. de 2025 10:42:32: 
+ sudoku.c | 25 ++++++++++++++++++++++++-
+ 1 file changed, 24 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:149:10: error: implicit declaration of function 'size'; did you mean '_msize'? [-Wimplicit-function-declaration]
+  149 |   while (size(S) != 0){
+      |          ^~~~
+      |          _msize
+sudoku.c:152:9: error: implicit declaration of function 'is_visited'; did you mean 'is_valid'? [-Wimplicit-function-declaration]
+  152 |      if(is_visited(n))continue;
+      |         ^~~~~~~~~~
+      |         is_valid
+sudoku.c:162:6: error: implicit declaration of function 'visit' [-Wimplicit-function-declaration]
+  162 |      visit(n);
+      |      ^~~~~
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+sudoku.c: In function 'DFS':
+sudoku.c:171:1: warning: control reaches end of non-void function [-Wreturn-type]
+  171 | }
+      | ^
+52e754c
