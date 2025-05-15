@@ -85,7 +85,6 @@ int is_valid(Node* n){
         }
     }*/
 
-    return 1; // Si pasó todas las validaciones, es válido
     int i,j,k,p;
 
     for(i=0;i<9;i++){
@@ -100,9 +99,8 @@ int is_valid(Node* n){
                 for(p=0;p<9;p++){
                     int a=3*(k/3) + (p/3) ;
                     int b=3*(k%3) + (p%3) ;
-                    if (a != i || b != j) { 
+                    if (a != i || b != j)
                           if (n->sudo[a][b] == n->sudo[i][j]) return 0;
-                    }
                 }
 
             }
