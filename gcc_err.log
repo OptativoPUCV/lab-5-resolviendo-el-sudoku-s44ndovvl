@@ -1,0 +1,8 @@
+In file included from test.c:5:
+sudoku.c: In function 'is_valid':
+sudoku.c:99:17: warning: "/*" within comment [-Wcomment]
+   99 |                 /*for (p = 0; p < 9; p++) {
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
