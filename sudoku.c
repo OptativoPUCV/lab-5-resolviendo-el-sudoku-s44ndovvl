@@ -149,7 +149,7 @@ Node* DFS(Node* initial, int* cont){
   while (size(S) != 0){
      Node* n = top(S);
      pop(S);
-     if(is_visited(n))continue;
+     //if(is_visited(n))continue;
 
      (*cont)++;
     if(is_final(n)){
