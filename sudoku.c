@@ -144,9 +144,9 @@ List* get_adj_nodes(Node* n){
                   new->sudo[i][j] = k;
                   if(is_valid(new)) pushBack(list, new);
 
-              }
+                }
+                return list; // se retorna la lista de nodos adyacentes
             }
-            return list; // se retorna la lista de nodos adyacentes
         }
     }
 
