@@ -44,7 +44,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int row_check[10], col_check[10], box_check[10];
+  /*int row_check[10], col_check[10], box_check[10];
     
     // Validar filas y columnas
     for (int i = 0; i < 9; i++) {
@@ -83,10 +83,10 @@ int is_valid(Node* n){
                 box_check[num] = 1;
             }
         }
-    }
+    }*/
 
     return 1; // Si pasó todas las validaciones, es válido
-    /*int i,j,k,p;
+    int i,j,k,p;
 
     for(i=0;i<9;i++){
         for(j=0;j<9;j++){
@@ -96,39 +96,19 @@ int is_valid(Node* n){
                     if(k != i && n->sudo[k][j] == n->sudo[i][j]) return 0;
                 }
                 
-                /*for (p = 0; p < 9; p++) {
-                    int a = ((i / 3) * 3) + (p / 3);
-                    int b = ((j / 3) * 3) + (p % 3);
-                    if (a != i || b != j) { 
-                        if (n->sudo[a][b] == n->sudo[i][j]) return 0;
-                    }
-                  }
-                
                 int k= 3 * (i/3) + (j/3);
                 for(p=0;p<9;p++){
                     int a=3*(k/3) + (p/3) ;
                     int b=3*(k%3) + (p%3) ;
-                    if (a != i || b != j) { 
+                    if (a != i || b != j) 
                           if (n->sudo[a][b] == n->sudo[i][j]) return 0;
-                    }
                 }
 
-                int startRow = 3 * (i / 3);
-                int startCol = 3 * (j / 3);
-                for (int row = 0; row < 3; row++) {
-                    for (int col = 0; col < 3; col++) {
-                        int a = startRow + row;
-                        int b = startCol + col;
-                        if (a != i || b != j) {
-                            if (n->sudo[a][b] == n->sudo[i][j]) return 0;
-                        }
-                    }
-                }
             }
         }
     }
 
-    return 1;*/
+    return 1;
 }
 
 
