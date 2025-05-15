@@ -150,16 +150,16 @@ Node* DFS(Node* initial, int* cont){
      Node* n = top(S);
      pop(S);
      if(is_visited(n))continue;
-     
+
      (*cont)++;
     if(is_final(n)){
             if(is_valid(n))return n;
             else return NULL;
     }
 
-    if(is_visited(n))continue;
+    //if(is_visited(n))continue;
      
-     visit(n);
+    // visit(n);
      List* adj=get_adj_nodes(n);
      Node* aux= first(adj);
      while(aux){
