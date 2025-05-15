@@ -156,7 +156,6 @@ Node* DFS(Node* initial, int* cont){
             else return NULL;
         }
 
-        // visit(n); // Descomenta si tienes una función visit
         List* adj = get_adj_nodes(n);
         Node* aux = first(adj);
         while (aux) {
