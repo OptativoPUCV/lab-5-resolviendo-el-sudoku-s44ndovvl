@@ -44,47 +44,6 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  /*int row_check[10], col_check[10], box_check[10];
-    
-    // Validar filas y columnas
-    for (int i = 0; i < 9; i++) {
-        // Reiniciar los arreglos de chequeo
-        for (int x = 0; x < 10; x++) row_check[x] = col_check[x] = 0;
-
-        for (int j = 0; j < 9; j++) {
-            // Validar fila
-            int num_row = n->sudo[i][j];
-            if (num_row != 0) {
-                if (row_check[num_row]) return 0;
-                row_check[num_row] = 1;
-            }
-
-            // Validar columna
-            int num_col = n->sudo[j][i];
-            if (num_col != 0) {
-                if (col_check[num_col]) return 0;
-                col_check[num_col] = 1;
-            }
-        }
-    }
-
-    // Validar submatrices de 3x3
-    for (int k = 0; k < 9; k++) {
-        // Reiniciar el arreglo de chequeo
-        for (int x = 0; x < 10; x++) box_check[x] = 0;
-
-        for (int p = 0; p < 9; p++) {
-            int i = 3 * (k / 3) + (p / 3);
-            int j = 3 * (k % 3) + (p % 3);
-            int num = n->sudo[i][j];
-
-            if (num != 0) {
-                if (box_check[num]) return 0;
-                box_check[num] = 1;
-            }
-        }
-    }*/
-
     int i,j,k,p;
 
     for(i=0;i<9;i++){
